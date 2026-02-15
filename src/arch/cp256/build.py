@@ -58,8 +58,8 @@ llvmrawprogram(
         "./cp256.S","./cp256.inc", "./screen.S", "./matrix_kbd.S", "./timer-simple.S","./i2c.S"
     ],
     deps=["include", "src/lib+bioslib", ".+cfcard_32k"],
-#    cflags=["-DSMALL -DPET8096 -DC64KBD"],
-    cflags=["-DSMALL -DPET8096 -DPETKBD"],
+    cflags=["-DSMALL -DPET8096 -DC64KBD"],
+#    cflags=["-DSMALL -DPET8096 -DPETKBD"],
     ldflags=["--no-check-sections"],
     linkscript="./cp256-32k.ld",
 )
@@ -89,7 +89,7 @@ mkcpmfs(
         "0:pasc.pas": "third_party/pascal-m+pasc_pas_cpm",
         "0:keyscan.com": "src/arch/cp256/utils+keyscan",
         "0:i2cscan.com": "src/arch/cp256/utils+i2c_scan",
-        "0:dstemp.com": "src/arch/cp256/utils+ds3231_temp",
+        "0:date.com": "src/arch/cp256/utils+ds3231_date",
         "0:mbrotc.com": "src/arch/cp256/utils+mbrot-col",
         "0:meminf.com": "src/arch/cp256/utils+meminfo",
 

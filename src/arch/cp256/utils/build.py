@@ -22,14 +22,14 @@ llvmprogram(
     deps=["include", "lib+cpm65"])
 
 llvmprogram(
-    name="ds3231_temp", 
+    name="ds3231_date", 
     srcs=[
           "./timer.h",
           "./timer_wrapper.S",
           "./i2c_wrapper.h",
           "./i2c_wrapper.S",
           "./i2c_helper.c",
-          "./ds3231_temp.c"], 
+          "./ds3231_date.c"], 
     deps=["include", "lib+cpm65"])
 
 llvmprogram(

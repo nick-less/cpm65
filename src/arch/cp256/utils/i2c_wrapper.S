@@ -32,9 +32,7 @@ zproc init_i2c_driver
     stx _call_i2c+2
 
     ; call init
-    ldy #6
-    jmp _call_i2c
-    rts
+    jmp i2c_init
 zendproc
 
 zproc i2c_start, .text.i2c_start
@@ -42,17 +40,17 @@ zproc i2c_start, .text.i2c_start
     jmp _call_i2c
 zendproc
 
-zproc i2c_stop, .text.i2c_stop
+zproc i2c_ack, .text.i2c_ack
     ldy #1
     jmp _call_i2c
 zendproc
 
-zproc i2c_ack, .text.i2c_ack
+zproc i2c_nack, .text.i2c_nack
     ldy #2
     jmp _call_i2c
 zendproc
 
-zproc i2c_nack, .text.i2c_nack
+zproc i2c_read, .text.i2c_read
     ldy #3
     jmp _call_i2c
 zendproc
@@ -62,9 +60,12 @@ zproc i2c_write, .text.i2c_write
     jmp _call_i2c
 zendproc
 
-zproc i2c_read, .text.i2c_read
+zproc i2c_stop, .text.i2c_stop
     ldy #5
     jmp _call_i2c
 zendproc
 
-
+zproc i2c_init, .text.i2c_init
+    ldy #6
+    jmp _call_i2c
+zendproc

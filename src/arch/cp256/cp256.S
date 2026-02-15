@@ -349,7 +349,7 @@ zproc drvstrat_I2C
 
 i2c_jmptable_lo:
     jmptablo I2C_START
-    jmptablo I2C_NAK
+    jmptablo I2C_ACK
     jmptablo I2C_NAK
     jmptablo RCV_I2C_BYTE
     jmptablo SEND_I2C_BYTE
@@ -357,7 +357,7 @@ i2c_jmptable_lo:
     jmptablo INIT_I2C
 i2c_jmptable_hi:
     jmptabhi I2C_START
-    jmptabhi I2C_NAK
+    jmptabhi I2C_ACK
     jmptabhi I2C_NAK
     jmptabhi RCV_I2C_BYTE
     jmptabhi SEND_I2C_BYTE
@@ -374,8 +374,10 @@ zproc drvstrat_TIMER
 
 timer_jmptable_lo:
     jmptablo timer_get
+    jmptablo timer_delay
 timer_jmptable_hi:
     jmptabhi timer_get
+    jmptabhi timer_delay
 zendproc
 
 

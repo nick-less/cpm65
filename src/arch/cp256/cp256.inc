@@ -58,10 +58,6 @@ I2C_DDR = VIA_DDRB
 I2C_PORT = VIA_PB
 
 
-SDA = (1 << 0)
-SCL = (1 << 1)
-
-
 CRTC    = 0xe880
 CRTC_ADDR = CRTC+0
 CRTC_STATUS = CRTC+1

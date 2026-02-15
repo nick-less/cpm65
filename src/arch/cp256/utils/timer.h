@@ -12,7 +12,7 @@ extern "C" {
 void init_timer_driver(uint16_t drvNr);
 
 int16_t timer_get(void); // this acutally the address of a uint32
-
+void timer_delay(uint8_t x); // loads via timer 2lh with x and waits
 
 
 #ifdef __cpluscplus 

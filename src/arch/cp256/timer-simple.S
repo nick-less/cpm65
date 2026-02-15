@@ -16,7 +16,7 @@ timer_value: .fill 4
 
 zproc  timer_setup
     lda #$E0 ; rom aus, io und screen an
-    sta MEMCTRL
+ ;   sta MEMCTRL
 
     lda #<timer_irq_handler
     sta $fffe
@@ -33,9 +33,29 @@ zproc  timer_setup
     sta timer_value+2
     sta timer_value+3
 
-    cli
+    ; cli
     rts
 zendproc
+#0b11100000
+; delay a *256 ticker ticks
+zproc  timer_delay 
+        pha
+        LDA VIA_ACR     ;
+        AND #%11111110 ;  Bits 6 and 7 of the ACR must be set to zero to specify the one-shot mode ; Byte laden
+        STA VIA_ACR    ; ;Select Mode
+        STA VIA_ACR      
+        LDA #0
+        STA VIA_T2CL     ;Low-Latch=0
+        pla              ;Delay Duration in a
+        STA VIA_T2CH     ;High Part=01hex.  Start
+        LDA #$20     ;Mask
+LOOP:
+        BIT  VIA_IFR      ;Time out?
+        BEQ  LOOP
+        LDA  VIA_T2CL     ;Clear Timer 2 Interrupt
+        rts
+zendproc
+
 
 zproc default_irq_handler
     rti

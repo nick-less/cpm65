@@ -37,5 +37,12 @@ zproc timer_get, .text.timer_get
     jmp _call_timer
 zendproc
 
+zproc timer_delay, .text.timer_delay
+    ldy #1
+    jmp _call_timer
+zendproc
+
+
+
 
 
