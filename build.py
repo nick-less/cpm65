@@ -59,6 +59,8 @@ export(
         "images/kim-1-sdcard.zip": "src/arch/kim-1+distro-sdcard",
         "images/kim-1-iec.zip": "src/arch/kim-1+distro-iec",
         "images/kim-1-sdshield.zip": "src/arch/kim-1+distro-sdshield",
+        "images/kim-1-sdcard.zip": "src/arch/kim-1+distro-sdcard",
+        "images/cp256-rawdiskimage-sdcard.img": "src/arch/cp256+rawdiskimage-sdcard",
     },
     deps=["tests"],
 )

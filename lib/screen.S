@@ -48,7 +48,7 @@ zproc screen_putchar, .text.screen_putchar
     jmp _call_screen
 zendproc
 
-zproc screen_putstring, .text.screen_putstring
+zproc _screen_putstring, .text.screen_putstring
     ldy #SCREEN_PUTSTRING
     jmp _call_screen
 zendproc

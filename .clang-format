@@ -19,7 +19,7 @@ AlwaysBreakTemplateDeclarations: 'Yes'
 BinPackArguments: 'false'
 BinPackParameters: 'false'
 BreakConstructorInitializers: 'AfterColon'
-BreakBeforeBraces: Allman
+BreakBeforeBraces: Attach
 BreakInheritanceList: AfterColon
 BreakStringLiterals: 'true'
 IndentCaseLabels: 'true'
